@@ -2,17 +2,9 @@ replicaCount: 1
 
 image:
   repository: joshirishabh631/demo-app
-  tag: latest
+  tag: "initial"
   pullPolicy: Always
 
 service:
   type: NodePort
   port: 5000
-
-resources: {}
-
-nodeSelector: {}
-
-tolerations: []
-
-affinity: {}
