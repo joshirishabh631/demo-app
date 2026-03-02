@@ -2,7 +2,7 @@ replicaCount: 1
 
 image:
   repository: joshirishabh631/demo-app
-  tag: 543f6f9d8568237587809ccd1899a7413a2d0024
+  tag: 41def92a60b9566975425a56db3070088385d410
   pullPolicy: Always
 
 service:
