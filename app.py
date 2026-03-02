@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 import socket
 import datetime
 
@@ -6,14 +6,11 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    hostname = socket.gethostname()
-    time = datetime.datetime.now()
-    return f"""
-    <h1>CI/CD SUCCESS BY RISHABH</h1>
-    <p><b>Pod Hostname:</b> {hostname}</p>
-    <p><b>Deployed At:</b> {time}</p>
-    <p><b>Status:</b> Running via ArgoCD + GitHub Actions</p>
-    """
+    return render_template(
+        "index.html",
+        hostname=socket.gethostname(),
+        time=datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    )
 
 @app.route("/health")
 def health():

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Deployment Status</title>
+<style>
+body {
+    margin:0;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto;
+    background: linear-gradient(135deg,#1f2937,#111827);
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+}
+
+.card {
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(15px);
+    padding:40px;
+    border-radius:18px;
+    width:420px;
+    text-align:center;
+    box-shadow:0 0 40px rgba(0,0,0,0.6);
+    animation: fade 1s ease;
+}
+
+h1 {
+    margin-bottom:10px;
+    font-size:28px;
+}
+
+.badge {
+    display:inline-block;
+    margin-top:15px;
+    padding:8px 16px;
+    border-radius:30px;
+    background:linear-gradient(45deg,#22c55e,#16a34a);
+    font-weight:bold;
+    animation:pulse 2s infinite;
+}
+
+.info {
+    margin-top:25px;
+    text-align:left;
+    font-size:15px;
+    line-height:1.8;
+}
+
+.label {
+    color:#9ca3af;
+}
+
+@keyframes pulse {
+    0% { transform:scale(1) }
+    50% { transform:scale(1.05) }
+    100% { transform:scale(1) }
+}
+
+@keyframes fade {
+    from { opacity:0; transform:translateY(20px) }
+    to { opacity:1; transform:translateY(0) }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>Deployment Successful By Rishabh Joshi</h1>
+
+<div class="badge">LIVE</div>
+
+<div class="info">
+<div><span class="label">Pod Hostname:</span> {{ hostname }}</div>
+<div><span class="label">Deployed At:</span> {{ time }}</div>
+<div><span class="label">Pipeline:</span> GitHub Actions → ArgoCD → Kubernetes</div>
+</div>
+
+</div>
+
+</body>
+</html>
