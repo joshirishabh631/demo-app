@@ -8,3 +8,11 @@ image:
 service:
   type: NodePort
   port: 5000
+
+resources:
+  requests:
+    cpu: 50m
+    memory: 64Mi
+  limits:
+    cpu: 100m
+    memory: 128Mi
